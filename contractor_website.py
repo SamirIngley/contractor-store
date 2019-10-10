@@ -103,14 +103,14 @@ def update_suit(suit_id):
 
 @app.route('/delete/<suit_id>', methods=['POST'])
 def delete_suit(suit_id):
-    """Delete a candy."""
+    """Delete a suit."""
     space_suits.delete_one({'_id': ObjectId(suit_id)})
     return redirect(url_for('index'))
 
 @app.route('/edit/<suit_id>', methods=['GET'])
-def edit_candy(candy_id):
-    """Page to submit an edit on a candy."""
-    suit = space_suits.find_one({'_id': ObjectId(space_id)})
+def edit_suit(suit_id):
+    """Page to submit an edit on a suit."""
+    suit = space_suits.find_one({'_id': ObjectId(suit_id)})
     return render_template('edit_suit.html', suit=suit)
 
 
