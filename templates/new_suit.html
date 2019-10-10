@@ -1,16 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
-
-<a href="/">Home</a>
-
-<h1>New Suit</h1>
+<br>
+<a href="/" class="btn btn-secondary">Home</a>
+<br>
+<center><h1>New Suit</h1><center>
 
 <form action="/new" method="POST">
-    Name: <input type="text" name="name"><br>
-    Price: <input type="number" name="price"><br>
-    Image URL: <input type="text" name="img_url"><br>
-    <button type="submit">Submit</button><br>
+    <br>
+    <br>
+    NAME: <input type="text" name="name"><br>
+    <br>
+    PRICE: <input type="number" name="price"><br>
+    <br>
+    IMG URL: <input type="text" name="img_url"><br>
+    <br>
+    <button type="submit" class="btn btn-warning">Submit</button>
 </form>
 
 {% endblock %}

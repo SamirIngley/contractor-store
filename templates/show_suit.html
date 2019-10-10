@@ -1,21 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
-
-<a href="/">Home</a>
-
-<h1>Suit: {{suit.name}}</h1>
+<br>
+<a href="/" class="btn btn-secondary">Home</a>
+<br>
+<center><h1>SUIT: {{suit.name}}</h1></center>
 
 <img src="{{suit.img_url}}"><br>
 
-Price: ${{suit.price}}
+<font size="28"><i>PRICE: ${{suit.price}}</i></font>
 
 <br><br>
-<a href="/edit/{{suit._id}}">Edit Suit </a>
+<a href="/edit/{{suit._id}}" class="btn btn-info">Edit Suit </a>
 
 <br><br>
 <form action="/delete/{{suit._id}}" method="POST">
-    <button type="submit">Delete Suit</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
 </form>
 
 {% endblock %}
