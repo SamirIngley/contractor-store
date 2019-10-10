@@ -43,20 +43,24 @@ space_suits = db.suits
 # ]
 
 
-@app.route("/")
-@app.route("/home")
-def home():
-    return render_template('home.html')
+#
+#
+#
+# @app.route("/mission")
+# def mission():
+#     return render_template('mission.html')
+#
+# @app.route("/products")
+# def products():
+#     return render_template('products.html')
+#
 
 
-@app.route("/mission")
-def mission():
-    return render_template('mission.html', products=products)
 
-@app.route("/products")
-def products():
-    return render_template('products.html')
-
+@app.route('/')
+def index():
+    """Return homepage."""
+    return render_template('index.html', suits=space_suits.find())
 
 
 @app.route('/new')
@@ -79,11 +83,11 @@ def create_suit():
 def show_suit(suit_id):
     """Show a single suit."""
     suit = space_suits.find_one({'_id': ObjectId(suit_id)})
-    return render_template('show_candy.html', suit=suit)
+    return render_template('show_suit.html', suit=suit)
 
-@app.route('/edit/<candy_id>', methods=['POST'])
+@app.route('/edit/<suit_id>', methods=['POST'])
 def update_suit(suit_id):
-    """Edit page for a candy."""
+    """Edit a suit posting."""
     new_suit = {
         'name': request.form.get('name'),
         'price': request.form.get('price'),

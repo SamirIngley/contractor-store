@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Home</a>
+
+<h1>Suit: {{suit.name}}</h1>
+
+<img src="{{suit.img_url}}"><br>
+
+Price: ${{candy.price}}
+
+<br><br>
+<a href="/edit/{{suit._id}}">Edit Suit </a>
+
+<br><br>
+<form action="/delete/{{suit._id}}" method="POST">
+    <button type="submit">Delete Suit</button>
+</form>
+
+{% endblock %}

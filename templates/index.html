@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Spacesuit Reuse Program</h1>
+
+<a href="/new">New Suit Posting</a>
+
+<ul>
+    {% for suit in suits %}
+
+    <li>
+        <a href="/suit/{{suit._id}}">{{suit.name}}</a>
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

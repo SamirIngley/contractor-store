@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Home</a>
+
+<h1>New Suit</h1>
+
+<form action="/new" method="POST">
+    Name: <input type="text" name="name"><br>
+    Price: <input type="number" name="price"><br>
+    Image URL: <input type="text" name="img_url"><br>
+    <button type="submit">Submit</button><br>
+</form>
+
+{% endblock %}
