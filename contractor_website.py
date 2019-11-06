@@ -113,8 +113,20 @@ def edit_suit(suit_id):
     suit = space_suits.find_one({'_id': ObjectId(suit_id)})
     return render_template('edit_suit.html', suit=suit)
 
+@app.route('/login')
+def login_page():
+    """Return new suit creation page."""
+    return render_template('login.html')
 
+@app.route('/login')
+def login_page():
+    """Return new suit creation page."""
+    return render_template('login.html')
 
+@app.route('/login')
+def login_page():
+    """Return new suit creation page."""
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
